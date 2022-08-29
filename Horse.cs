@@ -5,7 +5,7 @@ public static class Horse
     //  bool empCell=true;   
     //  return (empCell , x, y);
     // }
-    public static (int x, int) nextMove(int x, int y, int size, int[,] field, int count)
+    public static void nextMove(int x, int y, int size, int[,] field, int count)
     {
         
         //вверх вправо
@@ -17,6 +17,12 @@ public static class Horse
                 y = y + 1;
                 field[x, y] = 1;
                 count++;
+                if (count <= size*size)
+                {
+                showField();    
+                Console.ReadLine();
+                Horse .nextMove(x,y, size,field,count);
+                }
             }
         }
         //вверх влево
@@ -27,6 +33,8 @@ public static class Horse
                 x = x - 2;
                 y = y - 1;
                 field[x, y] = 1;
+                count++;
+                Horse .nextMove(x,y, size,field,count);
             }
         }
         //вправо вниз
@@ -37,6 +45,8 @@ public static class Horse
                 x = x + 1;
                 y = y + 2;
                 field[x, y] = 1;
+                count++;
+                Horse .nextMove(x,y, size,field,count);
             }
         }
         //вправо вверх
@@ -47,6 +57,8 @@ public static class Horse
                 x = x - 1;
                 y = y + 2;
                 field[x, y] = 1;
+                count++;
+                Horse .nextMove(x,y, size,field,count);
             }
         }
         //вниз влево
@@ -57,6 +69,8 @@ public static class Horse
                 x = x + 2;
                 y = y - 1;
                 field[x, y] = 1;
+                count++;
+                Horse .nextMove(x,y, size,field,count);
             }
         }
         //вниз вправо
@@ -67,6 +81,8 @@ public static class Horse
                 x = x + 2;
                 y = y + 1;
                 field[x, y] = 1;
+                count++;
+                Horse .nextMove(x,y, size,field,count);
             }
         }
         //влево вверх
@@ -77,6 +93,8 @@ public static class Horse
                 x = x - 1;
                 y = y - 2;
                 field[x, y] = 1;
+                count++;
+                Horse .nextMove(x,y, size,field,count);
             }
         }
         //влево вниз
@@ -87,6 +105,8 @@ public static class Horse
                 x = x + 1;
                 y = y - 2;
                 field[x, y] = 1;
+                count++;
+                Horse .nextMove(x,y, size,field,count);
             }
 
         }
