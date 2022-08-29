@@ -23,6 +23,10 @@ public static class Horse
                 Console.ReadLine();
                 Horse .nextMove(x,y, size,field,count);
                 }
+                else
+                {
+                return 
+                }
             }
         }
         //вверх влево
