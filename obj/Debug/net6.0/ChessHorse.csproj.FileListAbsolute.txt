@@ -1,0 +1,15 @@
+E:\Git\ChessHorse\obj\Debug\net6.0\ChessHorse.csproj.AssemblyReference.cache
+E:\Git\ChessHorse\obj\Debug\net6.0\ChessHorse.GeneratedMSBuildEditorConfig.editorconfig
+E:\Git\ChessHorse\obj\Debug\net6.0\ChessHorse.AssemblyInfoInputs.cache
+E:\Git\ChessHorse\obj\Debug\net6.0\ChessHorse.AssemblyInfo.cs
+E:\Git\ChessHorse\obj\Debug\net6.0\ChessHorse.csproj.CoreCompileInputs.cache
+E:\Git\ChessHorse\bin\Debug\net6.0\ChessHorse.exe
+E:\Git\ChessHorse\bin\Debug\net6.0\ChessHorse.deps.json
+E:\Git\ChessHorse\bin\Debug\net6.0\ChessHorse.runtimeconfig.json
+E:\Git\ChessHorse\bin\Debug\net6.0\ChessHorse.dll
+E:\Git\ChessHorse\bin\Debug\net6.0\ChessHorse.pdb
+E:\Git\ChessHorse\obj\Debug\net6.0\ChessHorse.dll
+E:\Git\ChessHorse\obj\Debug\net6.0\refint\ChessHorse.dll
+E:\Git\ChessHorse\obj\Debug\net6.0\ChessHorse.pdb
+E:\Git\ChessHorse\obj\Debug\net6.0\ChessHorse.genruntimeconfig.cache
+E:\Git\ChessHorse\obj\Debug\net6.0\ref\ChessHorse.dll
