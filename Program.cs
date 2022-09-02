@@ -2,5 +2,6 @@
 int [] currPosition = new int [2];
 int x =0;
 int y =0;
-int [] nextMove = new int [2];
+Horse .nextMove(x, y, 10,horseField ,0);
+
 
