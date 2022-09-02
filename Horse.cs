@@ -1,5 +1,6 @@
 public static class Horse
 {
+
     public static void showField(int[,] arr)
     {
         for (int i = 0; i < arr.GetLength(0); i++)
@@ -22,14 +23,16 @@ public static class Horse
             Horse.nextMove(x, y, size, field, count);
         }
     }
+
+
+
     public static void nextMove(int x, int y, int size, int[,] field, int count)
     {
+        System.Console.WriteLine($"x= {x} y={y} size= {size} count = {count}");
+        showField(field);
 
         //вверх вправо
-        System.Console.WriteLine($" {x},{y} {count}");
-        Horse.showField(field);
-
-        if (((x - 2) >= 0) && ((y + 1) < size))
+        if ((x - 2) >= 0 & (y + 1) < size)
         {
             if (field[x - 2, y + 1] != 1)
             {
@@ -38,8 +41,8 @@ public static class Horse
                 meWantToHideIt(x, y, size, field, count);
             }
         }
-        //вверх влево
 
+        //вверх влево
         if (((x - 2) > 0) && ((y - 1) > 0))
         {
             if (field[x - 2, y - 1] != 1)
@@ -49,8 +52,6 @@ public static class Horse
                 meWantToHideIt(x, y, size, field, count);
             }
         }
-
-
 
         //вправо вниз
         if (((x + 1) < size) && ((y + 2) < size))
@@ -63,6 +64,7 @@ public static class Horse
             }
 
         }
+
         //вправо вверх 
         if (((x - 1) <= 0) && ((y + 2) < size))
         {
@@ -115,10 +117,97 @@ public static class Horse
                 x = x + 1;
                 y = y - 2;
                 meWantToHideIt(x, y, size, field, count);
-            }
 
+            }
+        }
+
+        //вверх влево
+        if ((x - 2) > 0 & (y - 1) > 0)
+        {
+            if (field[x - 2, y - 1] != 1)
+            {
+                x = x - 2;
+                y = y - 1;
+                meWantToHideIt(x, y, size, field, count);
+            }
+        }
+
+        //вправо вниз
+        if ((x + 1) < size & (y + 2) < size)
+        {
+            if (field[x + 1, y + 2] != 1)
+            {
+                x = x + 1;
+                y = y + 2;
+                meWantToHideIt(x, y, size, field, count);
+            }
+        }
+
+        //вправо вверх
+        if (((x - 1) <= 0) & ((y + 2) < size))
+        {
+            if (field[x - 1, y + 2] != 1)
+            {
+                x = x - 1;
+                y = y + 2;
+                meWantToHideIt(x, y, size, field, count);
+
+            }
+        }
+
+        //вниз влево
+        if (((x + 2) < size) & ((y - 1) >= 0))
+        {
+            if (field[x + 2, y - 1] != 1)
+            {
+                x = x + 2;
+                y = y - 1;
+                meWantToHideIt(x, y, size, field, count);
+            }
+        }
+
+        //вниз вправо
+        if (((x + 2) < size) & ((y + 1) < size))
+        {
+            if (field[x + 2, y + 1] != 1)
+            {
+                x = x + 2;
+                y = y + 1;
+                meWantToHideIt(x, y, size, field, count);
+            }
+        }
+
+        //влево вверх
+        if (((x - 1) >= 0) & ((y - 2) >= 0))
+        {
+            if (field[x - 1, y - 2] != 1)
+            {
+                x = x - 1;
+                y = y - 2;
+                meWantToHideIt(x, y, size, field, count);
+            }
+        }
+
+        //влево вниз
+        System.Console.WriteLine($"x= {x} y={y} size= {size} count = {count}");
+        if (((x + 1) < size) & ((y - 2) >= 0))
+        {
+            if (field[x + 2, y + 1] != 1)
+            {
+                x = x + 1;
+                y = y - 2;
+                meWantToHideIt(x, y, size, field, count);
+            }
+        }
+        else
+        {
+            System.Console.WriteLine(" Ходы закончены");
         }
 
 
     }
+
+
+
 }
+
