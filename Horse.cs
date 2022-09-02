@@ -11,30 +11,28 @@ public static class Horse
                 System.Console.Write($" {arr[i, j]}");
             }
         }
+        System.Console.WriteLine();
+        
+        
         System.Console.ReadLine();
     }
     public static void meWantToHideIt(int x, int y, int size, int[,] field, int count)
     {
         field[x, y] = 1;
         count++;
+        System.Console.WriteLine($"x= {x} y={y} size= {size} count = {count}");
         if (count <= size * size)
         {
             showField(field);
             Horse.nextMove(x, y, size, field, count);
         }
     }
-
-
-
     public static void nextMove(int x, int y, int size, int[,] field, int count)
-    {
-        System.Console.WriteLine($"x= {x} y={y} size= {size} count = {count}");
-        showField(field);
-
+    {        
         //вверх вправо
         if ((x - 2) >= 0 & (y + 1) < size)
         {
-            if (field[x - 2, y + 1] != 1)
+            if (field[x - 2, y + 1] !=1 )
             {
                 x = x - 2;
                 y = y + 1;
@@ -117,7 +115,6 @@ public static class Horse
                 x = x + 1;
                 y = y - 2;
                 meWantToHideIt(x, y, size, field, count);
-
             }
         }
 
@@ -189,8 +186,7 @@ public static class Horse
         }
 
         //влево вниз
-        System.Console.WriteLine($"x= {x} y={y} size= {size} count = {count}");
-        if (((x + 1) < size) & ((y - 2) >= 0))
+              if (((x + 1) < size) & ((y - 2) >= 0))
         {
             if (field[x + 2, y + 1] != 1)
             {
