@@ -12,27 +12,27 @@ public static class Horse
             }
         }
         System.Console.WriteLine();
-        
-        
+
+
         System.Console.ReadLine();
     }
     public static void meWantToHideIt(int x, int y, int size, int[,] field, int count)
     {
         field[x, y] = 1;
         count++;
-        System.Console.WriteLine($"x= {x} y={y} size= {size} count = {count}");
+
         if (count <= size * size)
         {
-            showField(field);
+            // showField(field);
             Horse.nextMove(x, y, size, field, count);
         }
     }
     public static void nextMove(int x, int y, int size, int[,] field, int count)
-    {        
+    {
         //вверх вправо
         if ((x - 2) >= 0 & (y + 1) < size)
         {
-            if (field[x - 2, y + 1] !=1 )
+            if (field[x - 2, y + 1] != 1)
             {
                 x = x - 2;
                 y = y + 1;
@@ -41,7 +41,7 @@ public static class Horse
         }
 
         //вверх влево
-        if (((x - 2) > 0) && ((y - 1) > 0))
+        if (((x - 2) >= 0) && ((y - 1) >= 0))
         {
             if (field[x - 2, y - 1] != 1)
             {
@@ -110,7 +110,7 @@ public static class Horse
         //влево вниз
         if (((x + 1) < size) && ((y - 2) >= 0))
         {
-            if (field[x + 2, y + 1] != 1)
+            if (field[x + 1, y - 2] != 1)
             {
                 x = x + 1;
                 y = y - 2;
@@ -186,7 +186,7 @@ public static class Horse
         }
 
         //влево вниз
-              if (((x + 1) < size) & ((y - 2) >= 0))
+        if (((x + 1) < size) & ((y - 2) >= 0))
         {
             if (field[x + 2, y + 1] != 1)
             {
@@ -194,11 +194,14 @@ public static class Horse
                 y = y - 2;
                 meWantToHideIt(x, y, size, field, count);
             }
+            else
+            {
+                System.Console.WriteLine($"x= {x} y={y} size= {size} count = {count}");
+                System.Console.WriteLine(" Ходы закончены");
+                showField(field);
+            }
         }
-        else
-        {
-            System.Console.WriteLine(" Ходы закончены");
-        }
+
 
 
     }
