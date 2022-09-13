@@ -12,6 +12,7 @@ public static class Horse
             }
         }
         System.Console.WriteLine();
+        
         System.Console.ReadLine();
     }
 
@@ -24,7 +25,8 @@ public static class Horse
 
         if (count <= size * size)
         {
-            // showField(field);
+             showField(field);
+             System.Console.WriteLine($"x= {x} y={y} size= {size} count = {count}");
             Horse.nextMove(x, y, size, field, count);
         }
     }
@@ -41,49 +43,41 @@ public static class Horse
 
 
 
-    public static(int [,] field, int x, int y, bool goodMove,int count) upRight (int x, int y, int[,] field, int count)
-    {
-        //вверх вправо
-        bool goodMove = true;
-        if ((x - 2) >= 0 & (y + 1) < field .GetLength(0)*field.GetLength(1))//проверка существования клетки на поле
-        {
-            if (field[x - 2, y + 1] != 1) //проверка клетки на содержимое
-            {
-                x = x - 2;
-                y = y + 1;
-                field[x, y] = 1;
-                count++;
-            }
+    // public static(int [,] field, int x, int y, bool goodMove,int count) upRight (int x, int y, int[,] field, int count)
+    // {
+    //     //вверх вправо
+    //     bool goodMove = true;
+    //     if ((x - 2) >= 0 & (y + 1) < field .GetLength(0)*field.GetLength(1))//проверка существования клетки на поле
+    //     {
+    //         if (field[x - 2, y + 1] != 1) //проверка клетки на содержимое
+    //         {
+    //             x = x - 2;
+    //             y = y + 1;
+    //             field[x, y] = 1;
+    //             count++;
+    //         }
 
-        } 
-        return (field,x,y,goodMove, count);
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
+    //     } 
+    //     return (field,x,y,goodMove, count);
+    // }
 
     public static void nextMove(int x, int y, int size, int[,] field, int count)
     {
-        // //вверх вправо
-        // if ((x - 2) >= 0 & (y + 1) < size)
-        // {
-        //     if (field[x - 2, y + 1] != 1)
-        //     {
-        //         x = x - 2;
-        //         y = y + 1;
-        //         meWantToHideIt(x, y, size, field, count);
-        //     }
-        // }
+        //вверх вправо
+        int goodX;
+        int goodY;
+
+        if ((x - 2) >= 0 & (y + 1) < size)
+        {
+            if (field[x - 2, y + 1] != 1)
+            {
+                goodX =x;
+                goodY =y;
+                x = x - 2;
+                y = y + 1;
+                meWantToHideIt(x, y, size, field, count);
+            }
+        }
 
         //вверх влево
         if (((x - 2) >= 0) && ((y - 1) >= 0))
@@ -241,9 +235,10 @@ public static class Horse
             }
             else
             {
-                System.Console.WriteLine($"x= {x} y={y} size= {size} count = {count}");
-                System.Console.WriteLine(" Ходы закончены");
-                showField(field);
+                // System.Console.WriteLine($"x= {x} y={y} size= {size} count = {count}");
+                // System.Console.WriteLine(" Ходы закончены");
+                // // showField(field);
+                x=goodX;
             }
         }
 
